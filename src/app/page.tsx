@@ -1,10 +1,8 @@
-import { headers } from 'next/headers'
 import BBSCardList from "./components/BBSCardList";
 import { Post } from '@prisma/client';
 
 async function getPosts() {
-  const host = (await headers()).get('host')
-  const res = await fetch(`http://${host}/api/post`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/post`, {
     cache: 'no-store' // must in SSR
   })
   return res.json() as Promise<Post[]>
