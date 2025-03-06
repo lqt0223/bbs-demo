@@ -1,4 +1,4 @@
-import { Post } from "@prisma/client";
+import { Post } from "@/generated/client";
 import BBSCard from "./BBSCard";
 
 export type Props = {

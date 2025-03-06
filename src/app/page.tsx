@@ -1,5 +1,5 @@
 import BBSCardList from "./components/BBSCardList";
-import { Post } from '@prisma/client';
+import { Post } from '@/generated/client';
 
 async function getPosts() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/post`, {
