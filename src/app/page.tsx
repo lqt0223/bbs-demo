@@ -1,10 +1,9 @@
+import { getPosts as getPostsAction } from "@/lib/actions";
 import BBSCardList from "./components/BBSCardList";
 import { Post } from '@/generated/client';
 
 async function getPosts() {
-  const res = await fetch(`https://${process.env.VERCEL_URL}/api/post`, {
-    cache: 'no-store' // must in SSR
-  })
+  const res = await getPostsAction()
   return res.json() as Promise<Post[]>
 }
 
