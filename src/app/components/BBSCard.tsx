@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { toDate } from "@/lib/format";
-import { Post } from "@/generated/client";
+import { type Post } from "@prisma/client";
 import Link from "next/link";
 
 export type Props = {
