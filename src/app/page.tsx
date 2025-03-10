@@ -1,13 +1,8 @@
-import { getPosts as getPostsAction } from "@/lib/actions";
+import { prisma } from "@/lib/prisma";
 import BBSCardList from "./components/BBSCardList";
 
-async function getPosts() {
-  const res = await getPostsAction()
-  return res.json()
-}
-
 export default async function Home() {
-  const list = await getPosts()
+  const list = await prisma.post.findMany()
 
   return <main>
     <BBSCardList list={list} />
